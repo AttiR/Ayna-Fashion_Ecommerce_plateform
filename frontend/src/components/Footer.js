@@ -4,23 +4,42 @@ import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="text-center">
+    <footer className="text-center footer">
       <Row>
-        <Col xs={6} md={4}>
+        <Col xs={6} md={3}>
           <Row>
-            <strong>
-              <p>Contact</p>
-            </strong>
+            <p>Contact</p>
+          </Row>
+          <Row>
+            <p>Register</p>
+          </Row>
+          <Row>
+            <p>Sign In</p>
           </Row>
         </Col>
-        <Col xs={6} md={4}>
+        <Col xs={6} md={3}>
           <Row>
-            <strong>
-              <p>Links</p>
-            </strong>
+            <p>Contact</p>
+          </Row>
+          <Row>
+            <p>Register</p>
+          </Row>
+          <Row>
+            <p>Sign In</p>
           </Row>
         </Col>
-        <Col xs={6} md={4}>
+        <Col xs={6} md={3}>
+          <Row>
+            <p>About Us</p>
+          </Row>
+          <Row>
+            <p>Products</p>
+          </Row>
+          <Row>
+            <p>Partners</p>
+          </Row>
+        </Col>
+        <Col xs={6} md={3}>
           <Row>
             <h2>Ayna's Fashion</h2>
           </Row>
