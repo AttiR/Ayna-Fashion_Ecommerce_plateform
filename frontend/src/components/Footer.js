@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { FaFacebookF } from 'react-icons/fa';
+import {AiOutlineInstagram} from 'react-icons/fa';
 
 const Footer = () => {
   return (
