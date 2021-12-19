@@ -1,12 +1,15 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
       <Navbar className="navbar" expand="lg" fixed="top">
         <Container fluid className="mx-5">
-          <Navbar.Brand href="#">Ayna's Fashion</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            Ayna's Fashion
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -31,7 +34,7 @@ const Header = () => {
                 {' '}
                 <i class="fas fa-shopping-cart"></i> Cart
               </Nav.Link>
-              <Nav.Link href="#" className="nav_contact ">
+              <Nav.Link as={Link} to="/contact" className="nav_contact ">
                 Contact Us
               </Nav.Link>
             </Nav>

@@ -2,9 +2,6 @@ body {
   padding-top: 70px;
   margin: 0;
 }
-a{
-  text-decoration: none;
-}
 
 /* Navbar */
 .navbar {
@@ -34,6 +31,10 @@ a{
 
 main {
   min-height: 80vh;
+}
+
+.rating span {
+  margin: 0.1rem;
 }
 
 /**Footer */
