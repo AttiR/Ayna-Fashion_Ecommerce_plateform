@@ -2,6 +2,9 @@ body {
   padding-top: 70px;
   margin: 0;
 }
+a{
+  text-decoration: none;
+}
 
 /* Navbar */
 .navbar {
@@ -14,6 +17,7 @@ body {
   /*background-color: #0f5897;*/
   background-color: #00b3a7;
   padding: 5px 500px 8px 50px;
+  margin-left: 10px;
 }
 .nav_contact:hover {
   animation-name: background-color;
