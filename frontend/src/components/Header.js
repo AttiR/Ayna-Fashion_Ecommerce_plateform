@@ -17,7 +17,7 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action2">About Us</Nav.Link>
+              <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse id="navbarScroll">
@@ -26,11 +26,11 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action2">
+              <Nav.Link as={Link} to="/signin">
                 {' '}
                 <i class="fas fa-user"></i> Sign In
               </Nav.Link>
-              <Nav.Link href="#action2">
+              <Nav.Link as={Link} to="cart">
                 {' '}
                 <i class="fas fa-shopping-cart"></i> Cart
               </Nav.Link>
