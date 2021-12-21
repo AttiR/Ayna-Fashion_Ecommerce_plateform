@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Ecommerce Platform using MERN Stack",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,9 @@
   },
   "homepage": "https://github.com/AttiR/Ayna-Fashion_Ecommerce_plateform#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "concurrently": "^6.5.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
   }
 }
