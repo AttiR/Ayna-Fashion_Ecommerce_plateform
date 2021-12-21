@@ -1,5 +1,5 @@
-import React from 'react';
-import products from '../products';
+import React, { useState, useEffect } from 'react';
+
 import {
   Row,
   Col,
@@ -13,25 +13,34 @@ import {
 import Rating from '../components/Rating';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 /** use params for getting the products with ids */
 /* find() higher array methode to find the individual product with id */
 
 const ProductScreen = () => {
   let params = useParams();
-  const product = products.find((p) => p._id === params.id);
+  const [product, setProduct] = useState({});
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${params.id}`);
+      setProduct(data);
+    };
+    fetchProduct();
+  }, []);
+
   return (
     <>
-     <Container>
+      <Container>
         <Link className="btn btn-info my-5" to="/">
           Go Back
         </Link>
 
         <Row className="product-details">
-          <Col md={6} >
+          <Col md={6}>
             <Image src={product.image} alt={product.name} fluid />
           </Col>
-          <Col md={3} >
+          <Col md={3}>
             <ListGroup variant="flush">
               <ListGroupItem>
                 <h4>{product.name}</h4>
@@ -84,7 +93,7 @@ const ProductScreen = () => {
             </Card>
           </Col>
         </Row>
-        </Container>
+      </Container>
     </>
   );
 };
