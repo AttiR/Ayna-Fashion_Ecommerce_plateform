@@ -34,10 +34,10 @@ const orderSchema = mongoose.Schema(
     },
     // Paypal will send back some data back whthere its successfull or not
     paymentResult: {
-      id: { type, String },
-      status: { type, String },
-      update_item: { type, String },
-      email_address: { type, String },
+      id: { type: String },
+      status: { type: String },
+      update_item: { type: String },
+      email_address: { type: String },
     },
 
     taxPrice: {
