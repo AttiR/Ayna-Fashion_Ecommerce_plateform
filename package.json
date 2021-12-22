@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/AttiR/Ayna-Fashion_Ecommerce_plateform#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "concurrently": "^6.5.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
