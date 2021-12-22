@@ -58,7 +58,7 @@ const ProductScreen = () => {
           </Col>
 
           <Col md={3}>
-            <Card>
+            <Card className='card'>
               <ListGroup>
                 <ListGroupItem>
                   <Row>

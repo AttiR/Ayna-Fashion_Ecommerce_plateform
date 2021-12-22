@@ -37,7 +37,66 @@ main {
   margin: 0.1rem;
 }
 
+/** Main intro section ***/
 
+.intro-section {
+  background: url(/public/images1/image9.jpg) no-repeat center;
+  background-size: cover;
+  height: 73vh;
+}
+
+.intro {
+  width: 55%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5rem 2rem;
+  border-radius: 5px;
+}
+
+.intro .intro-text {
+  color: #bb2205;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.p-head {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.p-head span {
+  display: block;
+}
+
+.white-text {
+  color: #fff;
+  margin-bottom: 2.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 98rem;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  /* INTRO SECTION */
+  .intro {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* INTRO SECTION */
+  .intro {
+    width: 100%;
+  }
+}
 
 /**Footer */
 footer {
@@ -46,4 +105,8 @@ footer {
   padding: 2rem;
   color: #fff;
   text-align: justify;
+}
+
+.card {
+  border: none;
 }
