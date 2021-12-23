@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Container } from 'react-bootstrap';
 import Product from '../components/Product';
 import { listProducts } from '../actions/productActions';
+
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 import { Link } from 'react-router-dom';
 
 const HomeScreen = () => {
@@ -51,9 +54,9 @@ const HomeScreen = () => {
         <h1>Features Products</h1>
 
         {loading ? (
-          <h2>loading...</h2>
+          <Loader/>
         ) : error ? (
-          <h3>{error}</h3> // ternary operator
+          <Message variant='danger'>{error}</Message> // ternary operator
         ) : (
           <Row>
             {products.map((product) => (
