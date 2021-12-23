@@ -17,7 +17,9 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
+              <Nav.Link as={Link} to="/about">
+                About Us
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse id="navbarScroll">
