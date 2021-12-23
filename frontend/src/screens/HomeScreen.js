@@ -28,7 +28,7 @@ const HomeScreen = () => {
               consectetur adipisicing elit. Sit voluptatibus sapiente, ullam
               iste amet temporibus corporis itaque!
             </p>
-            <Link className="btn btn-info" to="/">
+            <Link className="btn btn-info" to="/contact">
               Contact Us
             </Link>
           </div>

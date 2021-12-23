@@ -42,7 +42,7 @@ main {
 .intro-section {
   background: url(/public/images1/image9.jpg) no-repeat center;
   background-size: cover;
-  height: 73vh;
+  height: 72vh;
 }
 
 .intro {
@@ -51,6 +51,7 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5rem 2rem;
   border-radius: 5px;
+  height: 500px;
 }
 
 .intro .intro-text {
