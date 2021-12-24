@@ -85,23 +85,29 @@ main {
   padding: 0 2.5rem;
 }
 
-@media screen and (max-width: 1000px) {
-  /* INTRO SECTION */
-  .intro {
-    width: 100%;
-  }
+/** About **/
+.about {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media screen and (max-width: 600px) {
-  /* INTRO SECTION */
-  .intro {
-    width: 100%;
-  }
+.about-text {
+  width: 50%;
+  text-align: justify;
+  line-height: 2;
 }
 
-/** About Section **/
+.about img {
+  width: 90%;
+  margin-left: 20px;
+}
 
-
+/****Card */
+.card {
+  border: none;
+}
 
 /**Footer */
 footer {
@@ -112,6 +118,29 @@ footer {
   text-align: justify;
 }
 
-.card {
-  border: none;
+/*** Media Queries **/
+
+@media screen and (max-width: 1000px) {
+  /* INTRO SECTION */
+  .intro {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  /* ABOUT SECTION */
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* INTRO SECTION */
+  .intro {
+    width: 100%;
+  }
 }
