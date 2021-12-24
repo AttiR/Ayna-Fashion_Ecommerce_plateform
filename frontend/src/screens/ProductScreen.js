@@ -12,8 +12,8 @@ import {
   Form,
 } from 'react-bootstrap';
 import Rating from '../components/Rating';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProductsDetails } from '../actions/productActions';
 import Loader from '../components/Loader';
@@ -24,6 +24,7 @@ import Message from '../components/Message';
 
 const ProductScreen = () => {
   let params = useParams();
+  let navigate = useNavigate();
   const dispatch = useDispatch();
   const [qty, setQty] = useState(0);
 
@@ -39,6 +40,9 @@ const ProductScreen = () => {
 
     dispatch(listProductsDetails(params.id));
   }, [dispatch, params.id]);
+
+  // Add to cart handler
+  const addToCartHandler = () => navigate(`/cart/${params.id}?qty=${qty}`);
 
   return (
     <>
@@ -123,6 +127,7 @@ const ProductScreen = () => {
 
                   <ListGroupItem>
                     <Button
+                      onClick={addToCartHandler}
                       className="btn btn-success
                     "
                       style={{ width: '100%' }}

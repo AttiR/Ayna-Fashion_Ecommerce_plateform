@@ -32,7 +32,7 @@ const Header = () => {
                 {' '}
                 <i class="fas fa-user"></i> Sign In
               </Nav.Link>
-              <Nav.Link as={Link} to="cart">
+              <Nav.Link as={Link} to="/cart">
                 {' '}
                 <i class="fas fa-shopping-cart"></i> Cart
               </Nav.Link>
