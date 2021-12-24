@@ -30,11 +30,11 @@ const Header = () => {
             >
               <Nav.Link as={Link} to="/signin">
                 {' '}
-                <i class="fas fa-user"></i> Sign In
+                <i className="fas fa-user"></i> Sign In
               </Nav.Link>
               <Nav.Link as={Link} to="/cart">
                 {' '}
-                <i class="fas fa-shopping-cart"></i> Cart
+                <i className="fas fa-shopping-cart"></i> Cart
               </Nav.Link>
               <Nav.Link as={Link} to="/contact" className="nav_contact ">
                 Contact Us
