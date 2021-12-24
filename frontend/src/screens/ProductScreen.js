@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   Row,
@@ -9,6 +9,7 @@ import {
   Button,
   Container,
   ListGroupItem,
+  Form,
 } from 'react-bootstrap';
 import Rating from '../components/Rating';
 import { Link } from 'react-router-dom';
@@ -24,6 +25,7 @@ import Message from '../components/Message';
 const ProductScreen = () => {
   let params = useParams();
   const dispatch = useDispatch();
+  const [qty, setQty] = useState(0);
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -36,7 +38,7 @@ const ProductScreen = () => {
     fetchProduct();*/
 
     dispatch(listProductsDetails(params.id));
-  }, [dispatch]);
+  }, [dispatch, params.id]);
 
   return (
     <>
@@ -93,6 +95,31 @@ const ProductScreen = () => {
                       </Col>
                     </Row>
                   </ListGroupItem>
+
+                  {/**** show the quabtity if in stock */}
+                  {product.countInStock > 0 && (
+                    <ListGroupItem>
+                      <Row>
+                        <Col>Qty</Col>
+                        <Col>
+                          <Form.Control
+                            as="select"
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value)}
+                          >
+                            {' '}
+                            {[...Array(product.countInStock).keys()].map(
+                              (x) => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
+                                </option>
+                              )
+                            )}
+                          </Form.Control>
+                        </Col>
+                      </Row>
+                    </ListGroupItem>
+                  )}
 
                   <ListGroupItem>
                     <Button
