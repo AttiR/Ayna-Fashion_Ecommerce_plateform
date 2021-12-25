@@ -4,10 +4,13 @@ import dotenv from 'dotenv';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
+import userRoutes from './routes/userRoutes.js'
 
 dotenv.config();
 
 const app = express();
+
+app.use(express.json()); // will allow us to accept us data in body
 
 connectDB();
 
@@ -26,6 +29,8 @@ app.get('/api/products/:id', (req, res) => {
 
 // mount the prodcutRoutes
 app.use('/api/products', productRoutes);
+// mount the userRoutes
+app.use('/api/users', userRoutes)
 
 // Custom Error Handling
 app.use(notFound);
