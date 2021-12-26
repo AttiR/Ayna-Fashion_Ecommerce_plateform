@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import About from './screens/About';
 import CartScreen from './screens/CartScreen';
 import ProductScreen from './screens/ProductScreen';
+import LoginScreen from './screens/LoginScreen';
 import NotFound from './components/NotFound';
 import Contact from './components/Contact';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -23,6 +24,7 @@ const App = () => {
             <Route path='/cart' element={<CartScreen />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route exact path="/login" element={<LoginScreen />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

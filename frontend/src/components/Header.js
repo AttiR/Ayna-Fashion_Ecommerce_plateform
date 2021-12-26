@@ -28,7 +28,7 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link as={Link} to="/signin">
+              <Nav.Link as={Link} to="/login">
                 {' '}
                 <i className="fas fa-user"></i> Sign In
               </Nav.Link>
