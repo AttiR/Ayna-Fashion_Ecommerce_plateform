@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import About from './screens/About';
 import CartScreen from './screens/CartScreen';
 import ProductScreen from './screens/ProductScreen';
+import RegisterScreen from './screens/RegisterScreen';
 import LoginScreen from './screens/LoginScreen';
 import NotFound from './components/NotFound';
 import Contact from './components/Contact';
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route exact path="/login" element={<LoginScreen />} />
+            <Route exact path="/register" element={<RegisterScreen />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
