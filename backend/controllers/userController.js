@@ -1,6 +1,6 @@
 import User from '../models/UserModel.js';
 import asyncHandler from 'express-async-handler';
-import generateToken from '../utilis/generateToken.js'
+import generateToken from '../utilis/generateToken.js';
 
 // in order to handle exceptions insted of try catch, using expressasynchandler
 
@@ -11,7 +11,6 @@ import generateToken from '../utilis/generateToken.js'
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body; // getting Json data from postman body
   const user = await User.findOne({ email });
-
 
   if (user && (await user.matchPassword(password))) {
     //matchPassword is a methode from userModel, to cpmare the password with encrypted password
@@ -33,8 +32,20 @@ const authUser = asyncHandler(async (req, res) => {
 //@access Private
 
 const getUserProfile = asyncHandler(async (req, res) => {
-  res.send('Success')
-});
+  const user = await User.findById(req.user._id)
+
+  if (user) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    })
+  } else {
+    res.status(404)
+    throw new Error('User not found')
+  }
+})
 
 export { authUser, getUserProfile };
 
