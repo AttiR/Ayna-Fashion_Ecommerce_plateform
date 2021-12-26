@@ -29,50 +29,42 @@ const authUser = asyncHandler(async (req, res) => {
 
 
 // User Registration
-//@desc   Register New user
-//@route  POST/api/users
-//@access public
-
+// @desc    Register a new user
+// @route   POST /api/users
+// @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body; // getting Json data from postman body
-  const userExists = await User.findOne({ email });
+  const { name, email, password } = req.body
 
-  if(userExists){
-    res.send(404)
-    throw new Error('User Already Exists')
+  const userExists = await User.findOne({ email })
+
+  if (userExists) {
+    res.status(400)
+    throw new Error('User already exists')
   }
-  // password will be hashed through middleware defined in userModel and its automatically saved
-  const user = await User.create({
 
+  const user = await User.create({
     name,
     email,
-    password
-
+    password,
   })
 
-  if(user){
+  if (user) {
     res.status(201).json({
-
       _id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
-      token: generateToken(user._id)
-
+      token: generateToken(user._id),
     })
-
-  }else{
-    res.send(400)
-    throw new Error('Invalid User Data')
+  } else {
+    res.status(400)
+    throw new Error('Invalid user data')
   }
-
-  
 })
 
-//@desc    Get User Profile
-//@route  POST/api/users/profile
-//@access Private
-
+// @desc    Get user profile
+// @route   GET /api/users/profile
+// @access  Private
 const getUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id)
 
@@ -89,6 +81,4 @@ const getUserProfile = asyncHandler(async (req, res) => {
   }
 })
 
-export { authUser,  registerUser , getUserProfile};
-
-// Note: user Authentication is carried out via postman and we will do user Authorization using Json Web Token
+export {authUser, registerUser, getUserProfile}
