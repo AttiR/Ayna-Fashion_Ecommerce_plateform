@@ -28,6 +28,14 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-export { authUser };
+//@desc    Get User Profile
+//@route  POST/api/users/profile
+//@access Private
+
+const getUserProfile = asyncHandler(async (req, res) => {
+  res.send('Success')
+});
+
+export { authUser, getUserProfile };
 
 // Note: user Authentication is carried out via postman and we will do user Authorization using Json Web Token
