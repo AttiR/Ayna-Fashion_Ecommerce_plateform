@@ -25,7 +25,49 @@ const authUser = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error('Invalid Email or password');
   }
-});
+})
+
+
+// User Registration
+//@desc   Register New user
+//@route  POST/api/users
+//@access public
+
+const registerUser = asyncHandler(async (req, res) => {
+  const { name, email, password } = req.body; // getting Json data from postman body
+  const userExists = await User.findOne({ email });
+
+  if(userExists){
+    res.send(404)
+    throw new Error('User Already Exists')
+  }
+  // password will be hashed through middleware defined in userModel and its automatically saved
+  const user = await User.create({
+
+    name,
+    email,
+    password
+
+  })
+
+  if(user){
+    res.status(201).json({
+
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(user._id)
+
+    })
+
+  }else{
+    res.send(400)
+    throw new Error('Invalid User Data')
+  }
+
+  
+})
 
 //@desc    Get User Profile
 //@route  POST/api/users/profile
@@ -47,6 +89,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
   }
 })
 
-export { authUser, getUserProfile };
+export { authUser,  registerUser , getUserProfile};
 
 // Note: user Authentication is carried out via postman and we will do user Authorization using Json Web Token
