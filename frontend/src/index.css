@@ -86,6 +86,11 @@ main {
 }
 
 /** About **/
+
+.about-div {
+  background-image: url('https://www.transparenttextures.com/patterns/brick-wall-dark.png');
+  height: 80vh;
+}
 .about {
   width: 100%;
   display: flex;
@@ -107,6 +112,20 @@ main {
 /****Card */
 .card {
   border: none;
+}
+
+/** Contact **/
+
+.contact {
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  height: 80vh;
+}
+
+/** Login ***/
+
+.login {
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+
 }
 
 /**Footer */

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/AttiR/Ayna-Fashion_Ecommerce_plateform#readme",
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "concurrently": "^6.5.1",
