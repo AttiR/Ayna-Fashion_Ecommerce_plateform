@@ -27,6 +27,9 @@ const CartScreen = () => {
   const cart = useSelector((state) => state.cart); // cart from store
   const { cartItems } = cart;
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   // useSelector hook is used to get cartItems from the state
 
   useEffect(() => {
@@ -40,11 +43,11 @@ const CartScreen = () => {
   };
 
   const checkoutHandler = () => {
-
-    
-      navigate('/login?redirect=shipping');
-  
-   
+    if (userInfo) {
+      navigate('/shipping');
+    } else {
+      navigate('/login');
+    }
   };
 
   return (
