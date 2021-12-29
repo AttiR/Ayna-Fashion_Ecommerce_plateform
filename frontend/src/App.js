@@ -8,6 +8,7 @@ import ProductScreen from './screens/ProductScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import LoginScreen from './screens/LoginScreen';
 import ShippingScreen from './screens/ShippingScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import NotFound from './components/NotFound';
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/profile" element={<ProfileScreen />} />
             <Route path="/shipping" element={<ShippingScreen />} />
             <Route path="/payment" element={<PaymentScreen />} />
+            <Route path="/placeorder" element={<PlaceOrderScreen />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
