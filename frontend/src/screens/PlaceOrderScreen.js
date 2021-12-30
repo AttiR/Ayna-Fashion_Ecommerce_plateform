@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   Button,
   Col,
@@ -10,12 +10,16 @@ import {
   Container,
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CheckoutSteps from '../components/CheckOutSteps';
+import { createOrder } from '../actions/orderActions';
 
 import Message from '../components/Message';
 
 const PlaceOrderScreen = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
   // lest gets items in cart
   const cart = useSelector((state) => state.cart); // from state
 
@@ -37,12 +41,36 @@ const PlaceOrderScreen = () => {
     Number(cart.shippingPrice) +
     Number(cart.taxPrice);
 
+
+  const orderCreate = useSelector(state => state.orderCreate)  
+  const {order, success, error} = orderCreate
+
+  useEffect(() => {
+    if(success){
+      navigate(`/order/${order._id}`)
+    }
+    // eslint-disable-next-line
+  }, [navigate, success])
+
   const placeOrderHandler = () => {
-    console.log('order');
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+      })
+    );
   };
+
+  console.log(cart.cartItems)
 
   return (
     <Container className="mt-5">
+
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>
@@ -131,6 +159,10 @@ const PlaceOrderScreen = () => {
                   <Col>Total</Col>
                   <Col>$ {cart.totalPrice}</Col>
                 </Row>
+              </ListGroupItem>
+
+              <ListGroupItem>
+                {error && <Message variant='danger'>{error}</Message>}
               </ListGroupItem>
 
               <ListGroupItem>
