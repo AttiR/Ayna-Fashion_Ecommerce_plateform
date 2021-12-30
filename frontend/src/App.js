@@ -9,6 +9,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import LoginScreen from './screens/LoginScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import NotFound from './components/NotFound';
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/shipping" element={<ShippingScreen />} />
             <Route path="/payment" element={<PaymentScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
+            <Route path="/order/:id" element={<OrderScreen />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
