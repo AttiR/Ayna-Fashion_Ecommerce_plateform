@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
-import userRoutes from './routes/userRoutes.js'
-import orderRoutes from './routes/orderRoutes.js'
+import userRoutes from './routes/userRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 
 dotenv.config();
 
@@ -31,10 +31,16 @@ app.get('/api/products/:id', (req, res) => {
 // mount the prodcutRoutes
 app.use('/api/products', productRoutes);
 // mount the userRoutes
-app.use('/api/users', userRoutes)
+app.use('/api/users', userRoutes);
 
 // mount the orderRoutes
-app.use('/api/orders', orderRoutes)
+app.use('/api/orders', orderRoutes);
+
+// paypal client id
+
+app.get('/api/config/paypal', (req, res) =>
+  res.send(process.env.PAYPAL_CLIENT_ID)
+);
 
 // Custom Error Handling
 app.use(notFound);
