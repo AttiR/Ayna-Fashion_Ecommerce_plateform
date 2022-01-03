@@ -12,6 +12,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import UserListScreen from './screens/UserListScreen';
 import NotFound from './components/NotFound';
 import Contact from './screens/Contact';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/register" element={<RegisterScreen />} />
             <Route path="/profile" element={<ProfileScreen />} />
+            <Route path="/admin/userlist" element={<UserListScreen />} />
             <Route path="/shipping" element={<ShippingScreen />} />
             <Route path="/payment" element={<PaymentScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
