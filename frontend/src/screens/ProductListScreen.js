@@ -5,7 +5,7 @@ import { Table, Button, Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listProducts } from '../actions/productActions';
+import { listProducts, deleteProduct } from '../actions/productActions';
 
 const ProductListScreen = () => {
   const navigate = useNavigate();
@@ -17,17 +17,24 @@ const ProductListScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  const productDelete = useSelector((state) => state.productDelete);
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = productDelete;
+
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listProducts());
     } else {
       navigate('/login');
     }
-  }, [dispatch, userInfo, navigate]);
+  }, [dispatch, userInfo, navigate, successDelete]);
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
-      // delete Prodcuts
+      dispatch(deleteProduct(id));
     }
   };
 
@@ -43,12 +50,19 @@ const ProductListScreen = () => {
             <h1>Products</h1>
           </Col>
           <Col className="text-right">
-            <Button className="my-3" onClick={createProductHandler} variant='success'>
+            <Button
+              className="my-3"
+              onClick={createProductHandler}
+              variant="success"
+            >
               {' '}
               <i className="fas fa-plus"></i> Create Product
             </Button>
           </Col>
         </Row>
+
+        {loadingDelete && <Loader />}
+        {errorDelete && <Message variant="danger">{errorDelete}</Message>}
 
         {loading ? (
           <Loader />

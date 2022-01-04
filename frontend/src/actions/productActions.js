@@ -6,7 +6,11 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
+  PRODUCT_DELETE_FAIL,
+  PRODUCT_DELETE_SUCCESS,
+  PRODUCT_DELETE_REQUEST,
 } from '../constants/productConstants';
+import { logout } from './userActions'
 
 // we will send these actions to reducers and then fires the reducers to components
 
@@ -47,3 +51,41 @@ export const listProductsDetails = (id) => async (dispatch) => {
     });
   }
 };
+
+
+export const deleteProduct = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: PRODUCT_DELETE_REQUEST,
+    })
+
+    const {
+      userLogin: { userInfo },
+    } = getState()
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    }
+
+    await axios.delete(`/api/products/${id}`, config)
+
+    dispatch({
+      type: PRODUCT_DELETE_SUCCESS,
+    })
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message
+    if (message === 'Not authorized, token failed') {
+      dispatch(logout())
+    }
+    dispatch({
+      type: PRODUCT_DELETE_FAIL,
+      payload: message,
+    })
+  }
+}
+
