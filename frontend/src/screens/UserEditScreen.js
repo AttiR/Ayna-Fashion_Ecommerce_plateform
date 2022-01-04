@@ -6,8 +6,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import FormContainer from '../components/FormContainer';
-import { getUserDetails } from '../actions/userActions';
-
+import { getUserDetails, updateUser } from '../actions/userActions';
+import { USER_UPDATE_RESET } from '../constants/userConstants';
 
 const UserEditScreen = () => {
   const navigate = useNavigate();
@@ -23,26 +23,34 @@ const UserEditScreen = () => {
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
 
+  const userUpdate = useSelector((state) => state.userUpdate)
+  const {
+    loading: loadingUpdate,
+    error: errorUpdate,
+    success: successUpdate,
+  } = userUpdate
+
  
-
   useEffect(() => {
-
-    if(!user.name || user._id !== userId){
-
+    if (successUpdate) {
+      dispatch({ type: USER_UPDATE_RESET })
+      navigate('/admin/userlist')
+    } else {
+      if (!user.name || user._id !== userId) {
         dispatch(getUserDetails(userId))
-
-    }else{
-
+      } else {
         setName(user.name)
         setEmail(user.email)
         setIsAdmin(user.isAdmin)
-
+      }
     }
-   
-  }, [dispatch, user,  userId]);
+  }, [dispatch, navigate, userId, user, successUpdate])
+
+ 
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(updateUser({ _id: userId, name, email, isAdmin }))
     
   };
 
@@ -54,6 +62,8 @@ const UserEditScreen = () => {
       </Link>
       <FormContainer>
         <h1>Edit User</h1>
+        {loadingUpdate && <Loader />}
+        {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         
         {loading ? (
           <Loader />
