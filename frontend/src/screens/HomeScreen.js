@@ -7,8 +7,11 @@ import { listProducts } from '../actions/productActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import { Link } from 'react-router-dom';
+import { Typography, Grid, Button } from '@material-ui/core';
+import useStyles from '../styles';
 
 const HomeScreen = () => {
+  const classes = useStyles();
   //const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
 
@@ -35,28 +38,68 @@ const HomeScreen = () => {
       <section className="intro-section">
         <div className="container">
           <div className="intro">
-            <p className="intro-text">For your delicacies.</p>
+            <Typography align="center">
+              {' '}
+              <p className="intro-text">For your delicacies.</p>
+            </Typography>
+
+            {/*
             <h1 className="p-head">
-              Welcome to <span>foody dinner restaurant</span>
+              Welcome to <span>Ayna Fashion World</span>
             </h1>
             <p className="white-text">
-              Our meals are exquisite and tasty Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Sit voluptatibus sapiente, ullam
-              iste amet temporibus corporis itaque!
-            </p>
-            <Link className="btn btn-info" to="/contact">
-              Contact Us
-            </Link>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quod
+              saepe vel voluptatem ratione possimus totam sed iure natus! Natus
+              veritatis aliquam maxime placeat fugit esse harum fuga a rem!
+            </p>*/}
+
+            <Typography variant="h2" align="center" color="white" gutterBottom>
+              Ayna's Fashion World
+            </Typography>
+            <Typography variant="h5" align="center" color="white" paragraph>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
+              laboriosam labore deleniti, magnam maiores mollitia culpa neque et
+              eos eum impedit cupiditate, quasi adipisci sapiente, iste porro
+              deserunt nihil quas?
+            </Typography>
+
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                <Link to={'/contact'}>
+                  <Button variant="contained" color="primary">
+                    Contact Us
+                  </Button>
+                  </Link>
+                </Grid>
+                <Grid item>
+                <Link to={'/about'}>
+                <Button variant="contained" color="Red">
+                    About Us
+                  </Button>
+                </Link>
+                 
+                </Grid>
+              </Grid>
+            </div>
           </div>
         </div>
       </section>
+
       <Container className="py-5">
-        <h1>Features Products</h1>
+        <Typography
+          variant="h2"
+          color="textPrimary"
+          gutterBottom
+          className="mb-3"
+        >
+          Features Products
+        </Typography>
 
         {loading ? (
-          <Loader/>
+          <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message> // ternary operator
+          <Message variant="danger">{error}</Message> // ternary operator
         ) : (
           <Row>
             {products.map((product) => (

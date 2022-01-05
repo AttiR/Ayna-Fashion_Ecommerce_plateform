@@ -4,8 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import { logout } from '../actions/userActions';
+import { Typography } from '@material-ui/core';
+
+import useStyles from '../styles';
 
 const Header = () => {
+  const classes = useStyles();
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -19,7 +23,9 @@ const Header = () => {
       <Navbar className="navbar" expand="lg" fixed="top">
         <Container fluid className="mx-5">
           <Navbar.Brand as={Link} to="/">
-            Ayna's Fashion
+            <Typography className={classes.title} variant="h6" noWrap>
+              Ayna's Fashion
+            </Typography>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -28,8 +34,9 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link as={Link} to="/about">
-                About Us
+            
+              <Nav.Link as={Link} to="/contact">
+                <Typography> Contact Us</Typography>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -73,10 +80,6 @@ const Header = () => {
               <Nav.Link as={Link} to="/cart">
                 {' '}
                 <i className="fas fa-shopping-cart"></i> Cart
-              </Nav.Link>
-
-              <Nav.Link as={Link} to="/contact" className="nav_contact ">
-                Contact Us
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
