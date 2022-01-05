@@ -21,7 +21,7 @@ const OrderListScreen = () => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listOrders());
     } else {
-      navigate('/login');
+      navigate('/signin');
     }
   }, [dispatch, navigate, userInfo]);
 

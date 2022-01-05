@@ -34,7 +34,7 @@ const ProfileScreen = () => {
 
   useEffect(() => {
     if (!userInfo) {
-      navigate('/login');
+      navigate('/signin');
     } else {
       if (!user) {
         dispatch(getUserDetails('profile'));

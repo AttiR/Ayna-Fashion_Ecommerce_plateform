@@ -41,7 +41,7 @@ const ProductListScreen = () => {
     dispatch({ type: PRODUCT_CREATE_RESET });
 
     if (!userInfo || !userInfo.isAdmin) {
-      navigate('/login');
+      navigate('/signin');
     }
 
     if (successCreate) {

@@ -5,8 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import About from './screens/About';
 import CartScreen from './screens/CartScreen';
 import ProductScreen from './screens/ProductScreen';
-import RegisterScreen from './screens/RegisterScreen';
-import LoginScreen from './screens/LoginScreen';
+
 import ShippingScreen from './screens/ShippingScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
@@ -19,6 +18,8 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import NotFound from './components/NotFound';
 import Contact from './screens/Contact';
+import SignInScreen from './screens/SignInScreen';
+import SignUpScreen from './screens/SignUpScreen';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
@@ -36,16 +37,20 @@ const App = () => {
 
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/login" element={<LoginScreen />} />
-            <Route path="/register" element={<RegisterScreen />} />
+
             <Route path="/profile" element={<ProfileScreen />} />
             <Route path="/admin/userlist" element={<UserListScreen />} />
             <Route path="/admin/productlist" element={<ProductListScreen />} />
             <Route path="/admin/orderlist" element={<OrderListScreen />} />
             <Route path="/admin/user/:id/edit" element={<UserEditScreen />} />
-            <Route path="/admin/product/:id/edit" element={<ProductEditScreen />} />
+            <Route
+              path="/admin/product/:id/edit"
+              element={<ProductEditScreen />}
+            />
             <Route path="/shipping" element={<ShippingScreen />} />
             <Route path="/payment" element={<PaymentScreen />} />
+            <Route path="/signin" element={<SignInScreen />} />
+            <Route path="/signup" element={<SignUpScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
             <Route path="/order/:id" element={<OrderScreen />} />
 
