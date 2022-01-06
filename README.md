@@ -38,7 +38,8 @@ Destroy data
 - GitHub for Version control.
 - Heroku for deployment.
 
-### OutCome of this Project/Learned
+### OutComes of this Project/Learned
+
 - React with Functional Components & Hooks
 - React router (React-router-dom v6)
 - React-Bootstrap UI library
