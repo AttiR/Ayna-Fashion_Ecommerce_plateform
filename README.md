@@ -34,5 +34,26 @@ Destroy data
 - MongoDB Database.
 - Postman for Router testing.
 - Material-UI and React Bootstrap.
+- MongoDb Compass for Data visualization.
+- GitHub for Version control.
+- Heroku for deployment.
+
+### OutCome for this Project/Learned
+- React with Functional Components & Hooks
+- React router (React-router-dom v6)
+- React-Bootstrap UI library
+- How to structure components
+- Component level state & props
+- Managing global state with Redux (Actions & Reducers)
+- Using Redux state in components (useDispatch & useSelector)
+- Creating an extensive back end with Express
+- Working with a MongoDB database and the Mongoose ODM
+- JWT authentication (JSON web tokens)
+- Creating custom authentication middleware
+- Custom error handler
+- Integrating the PayPal API
+- Environment variables
+- Project deployment
+
 
 
