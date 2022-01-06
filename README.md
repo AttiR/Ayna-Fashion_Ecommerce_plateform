@@ -26,3 +26,13 @@ Import data
 Destroy data 
 - npm run data:destroy
 
+## Process
+### Build With
+
+- MERN (MongoDB, Expresss, React, Node) Stack and Redux.
+- Redux state Managemnt.
+- MongoDB Database.
+- Postman for Router testing.
+- Material-UI and React Bootstrap.
+
+
