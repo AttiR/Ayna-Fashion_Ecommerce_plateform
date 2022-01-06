@@ -2,10 +2,10 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
+
 import About from './screens/About';
 import CartScreen from './screens/CartScreen';
 import ProductScreen from './screens/ProductScreen';
-
 import ShippingScreen from './screens/ShippingScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
@@ -31,6 +31,7 @@ const App = () => {
         <main>
           <Routes>
             <Route exact path="/" element={<HomeScreen />} />
+            
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/cart/:id" element={<CartScreen />} />
             <Route path="/cart" element={<CartScreen />} />

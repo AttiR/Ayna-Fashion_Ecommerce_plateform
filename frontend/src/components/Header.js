@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import { logout } from '../actions/userActions';
+
+
 import { Typography } from '@material-ui/core';
 
 import useStyles from '../styles';
@@ -34,7 +36,6 @@ const Header = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-            
               <Nav.Link as={Link} to="/contact">
                 <Typography> Contact Us</Typography>
               </Nav.Link>
@@ -58,7 +59,7 @@ const Header = () => {
               ) : (
                 <LinkContainer to="/signin">
                   <Nav.Link>
-                    <i className="fas fa-user"></i> Sign In
+                    <i className="fas fa-user"> </i> Sign In
                   </Nav.Link>
                 </LinkContainer>
               )}
@@ -81,6 +82,7 @@ const Header = () => {
                 {' '}
                 <i className="fas fa-shopping-cart"></i> Cart
               </Nav.Link>
+             
             </Nav>
           </Navbar.Collapse>
         </Container>

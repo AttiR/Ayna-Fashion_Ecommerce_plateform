@@ -57,28 +57,26 @@ const HomeScreen = () => {
               Ayna's Fashion World
             </Typography>
             <Typography variant="h5" align="center" color="white" paragraph>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
-              laboriosam labore deleniti, magnam maiores mollitia culpa neque et
-              eos eum impedit cupiditate, quasi adipisci sapiente, iste porro
-              deserunt nihil quas?
+              Explore the latest fashions, designed by the professional
+              designer. Wide range of formal and csual wearing is availble on
+              reasonable price.
             </Typography>
 
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                <Link to={'/contact'}>
-                  <Button variant="contained" color="primary">
-                    Contact Us
-                  </Button>
+                  <Link to={'/contact'}>
+                    <Button variant="contained" color="primary">
+                      Contact Us
+                    </Button>
                   </Link>
                 </Grid>
                 <Grid item>
-                <Link to={'/about'}>
-                <Button variant="contained" color="Red">
-                    About Us
-                  </Button>
-                </Link>
-                 
+                  <Link to={'/about'}>
+                    <Button variant="contained" color="Red">
+                      About Us
+                    </Button>
+                  </Link>
                 </Grid>
               </Grid>
             </div>

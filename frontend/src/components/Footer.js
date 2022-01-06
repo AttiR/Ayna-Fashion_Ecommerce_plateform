@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { FaFacebookF } from 'react-icons/fa';
-import {AiOutlineInstagram} from 'react-icons/fa';
+
+
 
 const Footer = () => {
   return (
@@ -20,24 +20,24 @@ const Footer = () => {
         </Col>
         <Col xs={6} md={3}>
           <Row>
-            <p>Contact</p>
+            <p>Brands</p>
           </Row>
           <Row>
-            <p>Register</p>
+            <p>Designers</p>
           </Row>
           <Row>
-            <p>Sign In</p>
+            <p>Top Products</p>
           </Row>
         </Col>
         <Col xs={6} md={3}>
           <Row>
-            <p>About Us</p>
-          </Row>
-          <Row>
-            <p>Products</p>
-          </Row>
-          <Row>
             <p>Partners</p>
+          </Row>
+          <Row>
+            <p>All Stores</p>
+          </Row>
+          <Row>
+            <p>Feedback</p>
           </Row>
         </Col>
         <Col xs={6} md={3}>
@@ -48,11 +48,7 @@ const Footer = () => {
             <p>&copy; Ayna's Fashion 2021</p>
           </Row>
           <Row>
-            <Col>
-              <FaFacebookF />
-              <FaFacebookF />
-              <FaFacebookF />
-            </Col>
+           
           </Row>
         </Col>
       </Row>
