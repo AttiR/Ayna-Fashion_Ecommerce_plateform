@@ -18,6 +18,7 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import NotFound from './components/NotFound';
 import Contact from './screens/Contact';
+
 import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/cart" element={<CartScreen />} />
 
             <Route path="/contact" element={<Contact />} />
+           
             <Route path="/about" element={<About />} />
 
             <Route path="/profile" element={<ProfileScreen />} />

@@ -65,14 +65,14 @@ const HomeScreen = () => {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                  <Link to={'/contact'}>
+                  <Link to={'/contact'} style={{ textDecoration: 'none' }}>
                     <Button variant="contained" color="primary">
                       Contact Us
                     </Button>
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link to={'/about'}>
+                  <Link to={'/about'} style={{ textDecoration: 'none' }}>
                     <Button variant="contained" color="Red">
                       About Us
                     </Button>
