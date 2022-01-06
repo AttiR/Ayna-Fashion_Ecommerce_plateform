@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { listUsers, deleteUser } from '../actions/userActions';
+import { Typography } from '@material-ui/core';
 
 const UserListScreen = () => {
   const navigate = useNavigate();
@@ -37,7 +38,9 @@ const UserListScreen = () => {
   return (
     <>
       <Container className="mt-5">
-        <h1>Users</h1>
+      <Typography component="h1" variant="h4" className='mb-5'>
+              Users
+            </Typography>
         {loading ? (
           <Loader />
         ) : error ? (

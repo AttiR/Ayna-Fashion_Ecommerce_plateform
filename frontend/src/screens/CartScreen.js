@@ -13,6 +13,10 @@ import {
   ListGroupItem,
 } from 'react-bootstrap';
 import Message from '../components/Message';
+
+import { Typography } from '@material-ui/core';
+
+
 import { addToCart, removeFromCart } from '../actions/cartActions';
 
 const CartScreen = () => {
@@ -33,10 +37,13 @@ const CartScreen = () => {
   // useSelector hook is used to get cartItems from the state
 
   useEffect(() => {
+    if (!userInfo) {
+      navigate('/signin');
+    }
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
-  }, [dispatch, productId, qty]);
+  }, [dispatch, productId, qty, userInfo, navigate]);
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
@@ -51,10 +58,15 @@ const CartScreen = () => {
   };
 
   return (
-    <Container className="my-5">
-      <Row>
+   
+    <Container className="mt-5">
+    
+      <Row >
         <Col md={8}>
-          <h1>Shopping Cart</h1>
+          <Typography component="h1" variant="h4" className='mb-5'>
+            Shopping Cart
+          </Typography>
+
           {cartItems.length === 0 ? (
             <Message variant="info">
               Cart is Empty <Link to="/">Go back</Link>{' '}

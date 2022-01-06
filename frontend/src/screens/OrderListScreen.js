@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { listOrders } from '../actions/orderActions';
+import { Typography } from '@material-ui/core';
+
 
 const OrderListScreen = () => {
   const navigate = useNavigate();
@@ -27,8 +29,11 @@ const OrderListScreen = () => {
 
   return (
     <>
+   
       <Container className='mt-5'>
-        <h1>Orders</h1>
+      <Typography component="h1" variant="h4" className='mb-5'>
+            Orders List
+          </Typography>
         {loading ? (
           <Loader />
         ) : error ? (

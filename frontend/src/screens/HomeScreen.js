@@ -90,6 +90,7 @@ const HomeScreen = () => {
           color="textPrimary"
           gutterBottom
           className="mb-3"
+          component="h1"
         >
           Features Products
         </Typography>

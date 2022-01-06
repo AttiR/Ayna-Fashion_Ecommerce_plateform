@@ -6,6 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { logout } from '../actions/userActions';
 
 
+
 import { Typography } from '@material-ui/core';
 
 import useStyles from '../styles';
@@ -22,6 +23,7 @@ const Header = () => {
 
   return (
     <header>
+   
       <Navbar className="navbar" expand="lg" fixed="top">
         <Container fluid className="mx-5">
           <Navbar.Brand as={Link} to="/">

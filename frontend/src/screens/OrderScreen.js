@@ -24,6 +24,8 @@ import {
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstants';
 
+import { Typography } from '@material-ui/core';
+
 const OrderScreen = () => {
   const navigate = useNavigate();
   const params = useParams();
@@ -113,7 +115,10 @@ const OrderScreen = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <Container className="mt-5">
-      <h1>Order {order._id}</h1>
+      <Typography component="h1" variant="h4" className="mb-5">
+        Order {order._id}
+      </Typography>
+
       <Row>
         <Col md={8}>
           <ListGroup variant="flush">

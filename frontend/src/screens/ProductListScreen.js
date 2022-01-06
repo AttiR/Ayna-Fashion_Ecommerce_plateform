@@ -5,6 +5,7 @@ import { Table, Button, Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import { Typography } from '@material-ui/core';
 import {
   listProducts,
   deleteProduct,
@@ -73,7 +74,9 @@ const ProductListScreen = () => {
       <Container className="mt-5">
         <Row className="align-items-center">
           <Col>
-            <h1>Products</h1>
+            <Typography component="h1" variant="h4">
+              Products
+            </Typography>
           </Col>
           <Col className="text-right">
             <Button
