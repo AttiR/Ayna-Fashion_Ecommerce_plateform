@@ -7,9 +7,9 @@ Anya’s Fashion is an Ecommerce Platform build with MERN Stack and Redux.  The 
 - npm install
 
 ### Run
-- # Run frontend (:3000) & backend (:5000)
+- Run frontend (:3000) & backend (:5000)
 npm run dev
 
-- # Run backend only
+- Run backend only
 npm run server
 
