@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-const path = require('path')
+import path from 'path'
 //import products from './data/products.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
