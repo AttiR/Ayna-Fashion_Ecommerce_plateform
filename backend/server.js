@@ -19,6 +19,7 @@ connectDB();
 app.get('/', (req, res) => {
   res.send('API is running.....');
 });
+
 // We are moving routes to routes folder we will ftech products routes from productRoutes
 /*app.get('/api/products', (req, res) => {
   res.json(products);
