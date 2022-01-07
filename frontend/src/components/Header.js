@@ -9,10 +9,10 @@ import { logout } from '../actions/userActions';
 
 import { Typography } from '@material-ui/core';
 
-import useStyles from '../styles';
+
 
 const Header = () => {
-  const classes = useStyles();
+
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -27,7 +27,7 @@ const Header = () => {
       <Navbar className="navbar" expand="lg" fixed="top">
         <Container fluid className="mx-5">
           <Navbar.Brand as={Link} to="/">
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography  variant="h6" noWrap>
               Ayna's Fashion
             </Typography>
           </Navbar.Brand>
