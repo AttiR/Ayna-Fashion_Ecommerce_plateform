@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import path from 'path';
+
 //import products from './data/products.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
@@ -45,13 +45,14 @@ app.get('/api/config/paypal', (req, res) =>
 );
 
 // serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
-  // set stattic folder
+/*if (process.env.NODE_ENV === 'production') {
+
   app.use(express.static('frontend/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'forntend', 'build', 'index.html'));
   });
-}
+}*/
+
 
 // Custom Error Handling
 app.use(notFound);
