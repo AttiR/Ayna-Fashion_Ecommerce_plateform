@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-
-
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,35 +8,80 @@ const Footer = () => {
       <Row>
         <Col xs={6} md={3}>
           <Row>
-            <p>Contact</p>
+            <Link
+              to={'/contact'}
+              style={{ textDecoration: 'none' }}
+              className="text-white"
+            >
+              <p>Contact</p>
+            </Link>
           </Row>
           <Row>
-            <p>Register</p>
+            <Link
+              to={'/signup'}
+              style={{ textDecoration: 'none' }}
+              className="text-white"
+            >
+              <p>Register</p>
+            </Link>
           </Row>
           <Row>
-            <p>Sign In</p>
+            <Link
+              to={'/signin'}
+              style={{ textDecoration: 'none' }}
+              className="text-white"
+            >
+              <p>Sign In</p>
+            </Link>
           </Row>
         </Col>
         <Col xs={6} md={3}>
           <Row>
-            <p>Brands</p>
+            <Link
+              to={'/about'}
+              style={{ textDecoration: 'none' }}
+              className="text-white"
+            >
+              <p>Brands</p>
+            </Link>
           </Row>
           <Row>
-            <p>Designers</p>
+            <Link
+              to={'/about'}
+              style={{ textDecoration: 'none' }}
+              className="text-white"
+            >
+              <p>Designers</p>
+            </Link>
           </Row>
+
           <Row>
-            <p>Top Products</p>
+            <Link
+              to={'/'}
+              style={{ textDecoration: 'none' }}
+              className="text-white"
+            >
+              {' '}
+              <p>Top Products</p>
+            </Link>
           </Row>
         </Col>
         <Col xs={6} md={3}>
+          <Row>
+            <Link
+              to={'/contact'}
+              style={{ textDecoration: 'none' }}
+              className="text-white"
+            >
+              {' '}
+              <p>Feedback</p>
+            </Link>
+          </Row>
           <Row>
             <p>Partners</p>
           </Row>
           <Row>
             <p>All Stores</p>
-          </Row>
-          <Row>
-            <p>Feedback</p>
           </Row>
         </Col>
         <Col xs={6} md={3}>
@@ -45,11 +89,9 @@ const Footer = () => {
             <h2>Ayna's Fashion</h2>
           </Row>
           <Row>
-            <p>&copy; Ayna's Fashion 2021</p>
+            <p>&copy; Ayna's Fashion 2022_ATTI</p>
           </Row>
-          <Row>
-           
-          </Row>
+          <Row></Row>
         </Col>
       </Row>
     </footer>
