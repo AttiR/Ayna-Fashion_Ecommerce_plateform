@@ -37,8 +37,9 @@ main {
   margin: 0.1rem;
 }
 
-/** Main intro section ***/
-
+/* INTRO SECTION */
+/* INTRO SECTION */
+/* INTRO SECTION */
 .intro-section {
   background: url(/public/images1/image9.jpg) no-repeat center;
   background-size: cover;
@@ -51,7 +52,6 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5rem 2rem;
   border-radius: 5px;
-  height: 500px;
 }
 
 .intro .intro-text {
@@ -78,11 +78,20 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.container {
-  width: 100%;
-  max-width: 98rem;
-  margin: 0 auto;
-  padding: 0 2.5rem;
+.btn {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #bb2205;
 }
 
 /** About **/
@@ -125,7 +134,6 @@ main {
 
 .login {
   background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-
 }
 
 /**Footer */
@@ -157,7 +165,7 @@ footer {
     text-align: center;
   }
 }
-@media screen and (max-width: 600px) {
+@media only screen and (min-width: 320px) and (max-width: 576px) {
   /* INTRO SECTION */
   .intro {
     width: 100%;

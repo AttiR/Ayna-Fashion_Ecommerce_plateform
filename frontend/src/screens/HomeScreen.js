@@ -42,26 +42,18 @@ const HomeScreen = () => {
               {' '}
               <p className="intro-text">For your delicacies.</p>
             </Typography>
+       
+              {' '}
+              <h1 className="p-head">
+                Welcome to <span>Ayna Fashion World</span>
+              </h1>
+          
 
-            {/*
-            <h1 className="p-head">
-              Welcome to <span>Ayna Fashion World</span>
-            </h1>
-            <p className="white-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quod
-              saepe vel voluptatem ratione possimus totam sed iure natus! Natus
-              veritatis aliquam maxime placeat fugit esse harum fuga a rem!
-            </p>*/}
-
-            <Typography variant="h2" align="center" color="white" gutterBottom>
-              Ayna's Fashion World
-            </Typography>
-            <Typography variant="h5" align="center" color="white" paragraph>
-              Explore the latest fashions, designed by the professional
-              designer. Wide range of formal and csual wearing is availble on
-              reasonable price.
-            </Typography>
-
+            <h5 className="white-text">
+              Explore the Latest Fashion, designed by the Professional
+              Designers. Wide range of Casual and Formal outfits are avilanle on
+              Reasonable prices.
+            </h5>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
@@ -80,6 +72,15 @@ const HomeScreen = () => {
                 </Grid>
               </Grid>
             </div>
+
+            {/* <Typography variant="h2" align="center" color="white" gutterBottom>
+              Ayna's Fashion World
+            </Typography>
+            <Typography variant="h5" align="center" color="white" paragraph>
+              Explore the latest fashions, designed by the professional
+              designer. Wide range of formal and csual wearing is availble on
+              reasonable price.
+            </Typography>*/}
           </div>
         </div>
       </section>
