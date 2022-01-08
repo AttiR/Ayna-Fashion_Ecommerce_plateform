@@ -16,10 +16,6 @@ app.use(express.json()); // will allow us to accept us data in body
 
 connectDB();
 
-app.get('/', (req, res) => {
-  res.send('API is running.....');
-});
-
 // We are moving routes to routes folder we will ftech products routes from productRoutes
 /*app.get('/api/products', (req, res) => {
   res.json(products);
@@ -45,14 +41,16 @@ app.get('/api/config/paypal', (req, res) =>
 );
 
 // serve static assets if in production
-/*if (process.env.NODE_ENV === 'production') {
-
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'forntend', 'build', 'index.html'));
   });
-}*/
-
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running.....');
+  });
+}
 
 // Custom Error Handling
 app.use(notFound);
