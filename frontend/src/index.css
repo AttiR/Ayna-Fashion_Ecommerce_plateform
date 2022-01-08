@@ -78,22 +78,6 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.btn {
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 0.8rem 1.6rem;
-  border-radius: 5px;
-  background-color: transparent;
-  transition: all 0.3s;
-}
-
-.btn:hover {
-  background-color: #bb2205;
-}
-
 /** About **/
 
 .about-div {
@@ -152,6 +136,9 @@ footer {
   .intro {
     width: 100%;
   }
+  .intro-section {
+    height: 90vh;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -169,5 +156,8 @@ footer {
   /* INTRO SECTION */
   .intro {
     width: 100%;
+  }
+  .intro-section {
+    height: 90vh;
   }
 }
