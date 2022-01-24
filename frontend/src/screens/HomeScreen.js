@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Container } from 'react-bootstrap';
 import Product from '../components/Product';
+import ProductValues from '../components/ProductValues';
 import { listProducts } from '../actions/productActions';
 
 import Loader from '../components/Loader';
@@ -110,6 +111,7 @@ const HomeScreen = () => {
           </Row>
         )}
       </Container>
+      <ProductValues/>
     </div>
   );
 };
