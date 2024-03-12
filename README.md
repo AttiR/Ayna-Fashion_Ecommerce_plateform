@@ -1,4 +1,4 @@
-# Ayna's-Fashion_Ecommerce_plateform
+# Ayna's-Fashion-Ecommerce-plateform
 Anya’s Fashion is an Ecommerce Platform build with MERN Stack and Redux.  The project is completed as per requiremnts of the Web-Programming Training at Omnia.
 ## Live Preview
 Live Preiview of this App: https://ayna-fashion.herokuapp.com/
